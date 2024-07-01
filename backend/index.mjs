@@ -1,6 +1,7 @@
 import express from "express";
 import { Server } from "socket.io";
 import cors from "cors";
+import { getTemperatureData } from "./utils/historicalData.mjs";
 
 const app = express();
 
@@ -97,6 +98,27 @@ app.patch(`/modules/:id`, (req, res) => {
     }
 
     res.status(200).json(module);
+});
+
+app.get("/modules/:id/history", (req, res) => {
+    const { id } = req.params;
+    const { start, stop, mode } = req.query;
+
+    const module = modules.find(module => module.id === id);
+    if (!module) {
+        return res.status(404).send("No module with the provided id");
+    }
+
+    if (!start || !stop || !mode) {
+        return res.status(400).send("Missing required query parameters");
+    }
+
+    if (mode !== "hourly" && mode !== "daily") {
+        return res.status(400).send("Invalid mode. Mode must be 'hourly' or 'daily'");
+    }
+
+    const data = getTemperatureData(start, stop, mode, module.targetTemperature);
+    res.status(200).json(data);
 });
 
 const httpServer = app.listen(3001, listen);

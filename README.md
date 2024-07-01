@@ -1,7 +1,7 @@
 # Zadanie rekrutacyjne
 
 - Napisz aplikację do zarządzania modułami IoT, wykonującymi pomiary parametrów wody w hodowli akwaponicznej
-- Sprawdzana będzie głównie funkcjonalność i jakość kodu aplikacji, jej wygląd jest mniej istotny
+- Sprawdzana będzie głównie funkcjonalność i jakość kodu aplikacji, a estetyka aplikacji będzie dodatkowo uwzględniana
 - Kod backendu aplikacji wraz z instrukcją uruchomienia znajduje się w katalogu [backend](./backend/)
 - Aplikację należy stworzyć w ReactJS
 
@@ -88,7 +88,33 @@ const socket = io("localhost:3001", {
 });
 ```
 
-### 5. Dodatkowe elementy
+### 5. Wyświetlanie danych historycznych temperatury
+
+- Na stronie szczegółów modułu należy dodać wykres lub/i tabelę z możliwością przeglądania danych historycznych dla modułu
+- Dane historyczne można pobrać przez endpoint `GET /modules/:id/history` z parametrami zapytania `start`, `stop` i `mode`
+- Parametry `start` i `stop` powinny być w formacie ISO 8601 (YYYY-MM-DDTHH:mm:ss.sssZ), a dozwolone wartości `mode` to "hourly" lub "daily"
+
+Przykładowe dane odpowiedzi zapytania `GET /modules/:id/history`:
+
+```json
+[
+  {
+    "timestamp": "2024-06-01T00:00:00.000Z",
+    "temperature": 19.5
+  },
+  {
+    "timestamp": "2024-06-01T01:00:00.000Z",
+    "temperature": 19.8
+  },
+  ...
+]
+```
+
+- Na wykresie lub w tabeli należy wyświetlić temperatury w czasie, umożliwiając użytkownikowi wybór zakresu czasowego oraz trybu ("hourly" lub "daily"
+)
+
+### 6. Dodatkowe elementy
 
 - Opis w README
 - Testy jednostkowe/komponentów
+- Pole na twoją kreatywność - jeśli uważasz, że coś warto według ciebie dodać do zadania
