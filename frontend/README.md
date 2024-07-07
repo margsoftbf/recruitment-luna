@@ -40,3 +40,10 @@ Information includes:
 - Allows editing of module parameters if the module is available.
 - Includes a button to return to the main list.
 - Displays historical temperature data with options to view hourly or daily data.
+
+## Screenshot
+
+![App Screenshoot](https://github.com/margsoftbf/recruitment-luna/blob/main/frontend/public/assets/screenshot/Screenshot_1.png)
+![App Screenshoot](https://github.com/margsoftbf/recruitment-luna/blob/main/frontend/public/assets/screenshot/Screenshot_2.png)
+![App Screenshoot](https://github.com/margsoftbf/recruitment-luna/blob/main/frontend/public/assets/screenshot/Screenshot_3.png)
+![App Screenshoot](https://github.com/margsoftbf/recruitment-luna/blob/main/frontend/public/assets/screenshot/Screenshot_4.png)
