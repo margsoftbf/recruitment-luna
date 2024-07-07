@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Aquaponic IoT Module Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application is designed to manage IoT modules that monitor water parameters in an aquaponic system. The main focus of the application is functionality and code quality, with aesthetics also considered. The backend code and instructions for running it are provided in the backend directory.
 
-Currently, two official plugins are available:
+## Download and Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Frontend
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+  git clone https://github.com/margsoftbf/recruitment-luna.git
+  cd frontend
+  npm i
+  npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Testing
+
+```bash
+ npm test
+```
+
+## Features
+
+Module List Page
+Each module displays:
+
+- Name
+- Availability
+- Target Temperature
+- Current Temperature (fetched via WebSocket)
+
+Module Details Page
+Information includes:
+
+- Name
+- Description
+- Availability
+- Target Temperature
+- Current Temperature (fetched via WebSocket)
+- Allows editing of module parameters if the module is available.
+- Includes a button to return to the main list.
+- Displays historical temperature data with options to view hourly or daily data.

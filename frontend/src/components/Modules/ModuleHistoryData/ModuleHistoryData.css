@@ -1,0 +1,57 @@
+.container {
+	margin: 2rem 0;
+}
+
+.hidstory-title {
+	font-size: 2rem;
+}
+
+.history-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.history-button {
+	border-radius: 0.5em;
+	padding: 0.5rem 1rem;
+	background-color: #fff;
+	color: #000;
+	font-weight: 500;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+
+.history-button:hover {
+	background-color: #8b8b93;
+}
+
+
+
+.history-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+	border: 1px solid #444;
+	padding: 0.5em 1em;
+	text-align: left;
+	color: #d1d1d1;
+}
+
+.history-table th {
+	background-color: #3a3d4a;
+}
+
+.history-table tr:nth-child(even) {
+	background-color: #3a3d4a;
+}
+
+.history-table tr:nth-child(odd) {
+	background-color: #2e313b;
+}

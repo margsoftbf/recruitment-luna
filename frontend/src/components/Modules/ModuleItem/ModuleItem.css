@@ -1,0 +1,30 @@
+.module {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: #2e313b;
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	width: 300px;
+}
+
+.module-title {
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.module-text {
+	color: #fff;
+}
+
+.module-curr-temp {
+	font-weight: 500;
+}
+
+.module p {
+	color: #9ca3af;
+}
